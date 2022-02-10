@@ -17,5 +17,5 @@
 # Build and run prod
 Windows
 `go build .; $Env:GIN_MODE="release"; .\go-products.exe`
-Linx
+Linux
 `go build .; export GIN_MODE="release"; .\go-products`
