@@ -17,6 +17,11 @@ func main() {
 
 	persistance.CreateConnection()
 
+	err := DbMigration()
+	if err != nil {
+		return
+	}
+
 	routes := router.InitRoutes()
 
 	startServer(routes)
@@ -24,9 +29,10 @@ func main() {
 
 func startServer(routes *gin.Engine) {
 	var port = strconv.Itoa(config.AppConf.Server.Port)
-	log.Println("Starting the server on port" + port)
-	err := routes.Run(":" + port)
+	log.Println("Starting the server on port: " + port)
+	err := routes.Run("127.0.0.1:" + port)
 	if err != nil {
+		log.Println("Error starting server: " + err.Error())
 		return
 	}
 }

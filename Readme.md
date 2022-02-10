@@ -9,7 +9,7 @@
 
 ## Prerequisite
 - `docker-compose up`
-- create `products` schema and create `products` table. Sql script provided in sql folder
+- It will automatically create required tables
 
 # Run 
 `go run .`

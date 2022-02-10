@@ -9,6 +9,14 @@ import (
 var DB *gorm.DB
 
 func CreateConnection() {
+	db, err := gorm.Open(mysql.Open(GetConnectionString()), &gorm.Config{})
+	if err != nil {
+		return
+	}
+	DB = db
+}
+
+func GetConnectionString() string {
 	var (
 		username = config.AppConf.Db.Username
 		password = config.AppConf.Db.Password
@@ -16,10 +24,5 @@ func CreateConnection() {
 		dbName   = config.AppConf.Db.Name
 		dsn      = username + ":" + password + "@tcp(" + host + ")/" + dbName + "?charset=utf8mb4&parseTime=True&loc=Local"
 	)
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	if err != nil {
-		return
-	}
-	DB = db
-
+	return dsn
 }

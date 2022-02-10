@@ -2,7 +2,7 @@ server:
   port: 8080
 
 db:
-  username: root
-  password: my-secret-pw
+  username: my_user
+  password: my_password
   host: "127.0.0.1:3306"
   name: products
