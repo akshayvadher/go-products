@@ -6,6 +6,8 @@
 
 # DB
 - mariadb
+Prerequisite
+`docker-compose up `
 
 # Run 
 `go run .`
