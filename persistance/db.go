@@ -10,10 +10,10 @@ var DB *gorm.DB
 
 func CreateConnection() {
 	var (
-		username = config.GetEnv("DB_USERNAME", "root")
-		password = config.GetEnv("DB_PASSWORD", "my-secret-pw")
-		host     = config.GetEnv("DB_HOST", "127.0.0.1:3306")
-		dbName   = config.GetEnv("DB_NAME", "products")
+		username = config.AppConf.Db.Username
+		password = config.AppConf.Db.Password
+		host     = config.AppConf.Db.Host
+		dbName   = config.AppConf.Db.Name
 		dsn      = username + ":" + password + "@tcp(" + host + ")/" + dbName + "?charset=utf8mb4&parseTime=True&loc=Local"
 	)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
