@@ -6,8 +6,10 @@
 
 # DB
 - mariadb
-Prerequisite
-`docker-compose up `
+
+## Prerequisite
+- `docker-compose up`
+- create `products` schema and create `products` table. Sql script provided in sql folder
 
 # Run 
 `go run .`
