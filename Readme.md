@@ -1,4 +1,17 @@
-# CRUD using
+# What
+It is just a POC to verify following 
+- HTTP Api works
+- DB integration works
+- CRUD end to end
+- Pagination works
+- Custom errors can be sent
+- DB migration works
+- Configuration file can be setup
+- Configuration can be overridden from ENV variables
+
+Basically, in order to create a PROD grade app, all above things are necessary
+
+# Tech
 - Go
 - Gin
 
